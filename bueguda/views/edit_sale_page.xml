@@ -1,0 +1,19 @@
+<odoo>
+    <record id="view_sale_order_form_inherit_page" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.page</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Dentro do notebook, adicionamos uma nova página -->
+            <xpath expr="//notebook" position="inside">
+                <page string="Aprovação">
+                    <group>
+                        <field name="approval_date"/>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

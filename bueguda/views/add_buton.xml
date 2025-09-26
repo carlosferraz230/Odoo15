@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+
+        <record id="view_order_tree_pending_custom" model="ir.ui.view">
+            <field name="name">sale.order.tree.pending.custom</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <!-- Remover botão criar -->
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                </xpath>
+
+                <!-- Adicionar botão Rascunho em cada linha -->
+                <xpath expr="//tree" position="inside">
+                    <button name="action_set_draft"
+                            type="object"
+                            string="Rascunho"
+                            class="btn-secondary"
+                            icon="fa-pencil"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,27 @@
+<odoo>
+    <!-- Grupo Funcionário de Vendas -->
+    <record id="group_sales_employee" model="res.groups">
+        <field name="name">Funcionário de Vendas</field>
+    </record>
+
+    <!-- Regra: Funcionário só vê os pedidos que ele criou -->
+    <record id="rule_sales_employee_orders" model="ir.rule">
+        <field name="name">Funcionário vê apenas seus pedidos</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="groups" eval="[(4, ref('bueguda.group_sales_employee'))]"/>
+        <field name="domain_force">[('user_id', '=', user.id)]</field>
+    </record>
+
+    <!-- Grupo Gerente de Vendas -->
+    <record id="group_sales_manager" model="res.groups">
+        <field name="name">Gerente de Vendas</field>
+    </record>
+
+    <!-- Regra: Gerente vê todos os pedidos -->
+    <record id="rule_sales_manager_orders" model="ir.rule">
+        <field name="name">Gerente vê todos os pedidos</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="groups" eval="[(4, ref('bueguda.group_sales_manager'))]"/>
+        <field name="domain_force">[(1,'=',1)]</field>
+    </record>
+</odoo>

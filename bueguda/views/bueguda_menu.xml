@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Menu Principal da Oficina -->
+        <menuitem id="main_bueguda_menu"
+                  name="Bueguda Company"
+                  sequence="0"
+                  web_icon="carlos,static/description/icon.png"/>
+
+        <!-- Aqui começa a acçção do Modulo Vendas -->
+        <record id="action_sale_order" model="ir.actions.act_window">
+            <field name="name">Lista de Vendas</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+        <menuitem id="sale_order_menu"
+                  name="Vendas"
+                  parent="main_bueguda_menu"
+                  action="action_sale_order"
+                  sequence="1"/>
+
+        <!-- Aqui começa a acçção do Modulo Faturação -->
+        <record id="action_account_move" model="ir.actions.act_window">
+            <field name="name">Lista de Faturação</field>
+            <field name="res_model">account.move</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+        <menuitem id="account_move_menu"
+                  name="Faturação"
+                  parent="main_bueguda_menu"
+                  action="action_account_move"
+                  sequence="2"/>
+
+        <!-- Aqui começa a acçção do Modulo Produto -->
+        <record id="action_product_template" model="ir.actions.act_window">
+            <field name="name">Lista De Artigos</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+        <menuitem id="product_template_menu"
+                  name="Artigos"
+                  parent="main_bueguda_menu"
+                  action="action_product_template"
+                  sequence="3"/>
+
+        <!-- Aqui começa a acçção do Modulo Relatorio -->
+        <record id="action_sale_report" model="ir.actions.act_window">
+            <field name="name">Lista De Relatorios</field>
+            <field name="res_model">sale.report</field>
+            <field name="view_mode">graph,tree,form,kanban</field>
+        </record>
+        <menuitem id="sale_report_menu"
+                  name="Relatorios"
+                  parent="main_bueguda_menu"
+                  action="action_sale_report"
+                  sequence="4"/>
+
+
+        <!-- Colocar os pedidos Pendentes no Novo Menu -->
+        <record id="action_bueguda" model="ir.actions.act_window">
+            <field name="name">Pedidos Pendentes</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">tree,form</field>
+            <!-- Usa a view customizada -->
+            <field name="view_id" ref="view_order_tree_pending_custom"/>
+            <field name="domain">[('state','=','draft')]</field>
+            <field name="target">current</field>
+        </record>
+        <menuitem id="bueguda_menu"
+                  name="Pedidos Pendentes"
+                  parent="main_bueguda_menu"
+                  action="action_bueguda"
+                  sequence="5"/>
+
+        <!-- Aqui começa a acçção do Modulo Settings -->
+        <record id="action_res_settings" model="ir.actions.act_window">
+            <field name="name">Definiçoes</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form,kanban</field>
+        </record>
+        <menuitem id="res_settings_menu"
+                  name="Definiçoes"
+                  parent="main_bueguda_menu"
+                  action="action_res_settings"
+                  sequence="6"/>
+
+    </data>
+</odoo>

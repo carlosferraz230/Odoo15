@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <!-- View customizada sem botão criar -->
+        <record id="view_order_tree_pending_custom" model="ir.ui.view">
+            <field name="name">sale.order.tree.pending.custom</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Action para o submenu -->
+        <record id="action_bueguda" model="ir.actions.act_window">
+            <field name="name">Pedidos Pendentes</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">tree,form</field>
+            <!-- Usa a view customizada -->
+            <field name="view_id" ref="view_order_tree_pending_custom"/>
+            <field name="domain">[('state','=','draft')]</field>
+            <field name="target">current</field>
+        </record>
+
+        <!-- Submenu -->
+        <menuitem id="menu_bueguda"
+                  name="Pedidos Pendentes"
+                  parent="sale.sale_menu_root"
+                  action="action_bueguda"
+                  sequence="6"/>
+    </data>
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="seq_res_partner_customer_code" model="ir.sequence">
+            <field name="name">Código Interno do Cliente</field>
+            <field name="code">bueguda.seq</field>
+            <field name="prefix">CC</field>
+            <field name="padding">3</field>
+        </record>
+
+    </data>
+</odoo>
