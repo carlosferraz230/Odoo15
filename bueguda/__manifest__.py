@@ -19,7 +19,7 @@
     ],
     'assets': {
         'web.assets_backend': [
-            'bueguda/static/css/custom.css'
+            'odoo-ao-partner-training/odoo15/bueguda/static/css/style.css',
         ],
     }
 }
