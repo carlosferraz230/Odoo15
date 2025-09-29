@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Menu Principal da Oficina -->
+        <menuitem id="main_facture_menu"
+                  name="Fast Facture"
+                  sequence="0"
+                  web_icon="carlos,static/description/icon.png"/>
+
+        <!-- Aqui começa a acçção do Modulo Vendas -->
+        <record id="action_sale_order" model="ir.actions.act_window">
+            <field name="name">Movimentos</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+        <menuitem id="account_move_menu"
+                  name="Movimentos"
+                  parent="main_facture_menu"
+                  action="action_sale_order"
+                  sequence="1"/>
+
+    </data>
+</odoo>
