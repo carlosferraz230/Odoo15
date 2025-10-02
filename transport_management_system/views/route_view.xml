@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Alterando a View Form do Modulo Fleet Vehicle -->
+    <record id="route_regist_views_form" model="ir.ui.view">
+        <field name="name">route.regist.form</field>
+        <field name="model">route.regist</field>
+        <field name="arch" type="xml">
+            <form string="Rotas">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="car_name"/>
+                            <field name="origin"/>
+                        </group>
+                        <group>
+                            <field name="destiny"/>
+                            <field name="distance"/>
+                            <field name="price"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Modelo, Registo de uma vista tree-->
+    <record id="route_regist_views_tree" model="ir.ui.view">
+        <field name="name">route.regist.tree</field>
+        <field name="model">route.regist</field>
+        <field name="arch" type="xml">
+            <tree string="Rotas">
+                <field name="car_name"/>
+                <field name="origin"/>
+                <field name="destiny"/>
+                <field name="distance"/>
+                <field name="price"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Modelo , Registo de Uma Vista Kanban -->
+    <record id="route_regist_view_kanban" model="ir.ui.view">
+        <field name="name">route.regist.kanban</field>
+        <field name="model">route.regist</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_small_column" create="true">
+                <field name="car_name"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record">
+                            <div class="o_kanban_record_top">
+                                <strong>
+                                    <field name="car_name"/>
+                                </strong>
+                            </div>
+                            <div class="o_kanban_record_body">
+                                <p>
+                                    <b>Origen :</b>
+                                    <field name="origin"/>
+                                </p>
+                                <p>
+                                    <b>Destino :</b>
+                                    <field name="destiny"/>
+                                </p>
+                                <p>
+                                    <b>Distancia :</b>
+                                    <field name="distance"/>
+                                </p>
+                                <p>
+                                    <b>Preço : </b>
+                                    <field name="price"/>
+                                </p>
+
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+</odoo>

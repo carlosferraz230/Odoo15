@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Alterando a View Form do Modulo Fleet Vehicle -->
+    <record id="driver_regist_views_form" model="ir.ui.view">
+        <field name="name">driver.regist.form</field>
+        <field name="model">driver.regist</field>
+        <field name="arch" type="xml">
+            <form string="Motorista">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="driver_id"/>
+                            <field name="cnh"/>
+                        </group>
+                        <group>
+                            <field name="license_validity"/>
+                            <field name="availability"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Modelo, Registo de uma vista tree-->
+    <record id="driver_regist_views_tree" model="ir.ui.view">
+        <field name="name">driver.regist.tree</field>
+        <field name="model">driver.regist</field>
+        <field name="arch" type="xml">
+            <tree string="Motorista">
+                <field name="driver_id"/>
+                <field name="cnh"/>
+                <field name="license_validity"/>
+                <field name="availability"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Modelo , Registo de Uma Vista Kanban -->
+    <record id="driver_regist_view_kanban" model="ir.ui.view">
+        <field name="name">driver.regist.kanban</field>
+        <field name="model">driver.regist</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_small_column" create="true">
+                <field name="driver_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record">
+                            <div class="o_kanban_record_top">
+                                <strong>
+                                    <field name="driver_id"/>
+                                </strong>
+                            </div>
+                            <div class="o_kanban_record_body">
+                                <p>
+                                    <b>CNH :</b>
+                                    <field name="cnh"/>
+                                </p>
+                                <p>
+                                    <b>Validade da Licença :</b>
+                                    <field name="license_validity"/>
+                                </p>
+                                <p>
+                                    <b>Disponibilidade :</b>
+                                    <field name="availability"/>
+                                </p>
+
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+</odoo>

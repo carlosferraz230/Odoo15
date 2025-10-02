@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="language_switcher_template" name="Language Switcher">
+        <t t-name="transport_management_system.LanguageSwitcher">
+            <!-- Template usado pelo JS, mas não precisa herdar web.layout -->
+        </t>
+    </template>
+</odoo>

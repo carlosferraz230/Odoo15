@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Menu Principal Sistema de Gestão de Transporte -->
+        <menuitem id="main_transport_menu"
+                  name="Sistema de Gestão de Transporte"
+                  sequence="0"
+                  web_icon="transport_management_system/static/description/icon.png"/>
+
+        <!-- Aqui começa a ação do Modelo fleet -->
+        <record id="action_route_regist" model="ir.actions.act_window">
+            <field name="name">Rotas</field>
+            <field name="res_model">route.regist</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+        <menuitem id="route_regist_menu"
+                  name="Rotas"
+                  parent="main_transport_menu"
+                  action="action_route_regist"
+                  sequence="1"/>
+
+        <!-- Aqui começa a ação do Modelo fleet -->
+        <record id="action_fleet_regist" model="ir.actions.act_window">
+            <field name="name">Frota</field>
+            <field name="res_model">fleet.regist</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+        <menuitem id="fleet_regist_menu"
+                  name="Transportes"
+                  parent="main_transport_menu"
+                  action="action_fleet_regist"
+                  sequence="2"/>
+
+         <!-- Aqui começa a ação do Modelo fleet -->
+        <record id="action_driver_regist" model="ir.actions.act_window">
+            <field name="name">Motorista</field>
+            <field name="res_model">driver.regist</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+        <menuitem id="driver_regist_menu"
+                  name="Motorista"
+                  parent="main_transport_menu"
+                  action="action_driver_regist"
+                  sequence="3"/>
+
+         <!-- Aqui começa a ação do Modelo fleet -->
+        <record id="action_trip_regist" model="ir.actions.act_window">
+            <field name="name">Viagens</field>
+            <field name="res_model">trip.regist</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+        <menuitem id="trip_regist_menu"
+                  name="Viagens"
+                  parent="main_transport_menu"
+                  action="action_trip_regist"
+                  sequence="4"/>
+
+        <!-- Aqui começa a ação do Modelo fleet -->
+        <record id="action_trip_price_regist" model="ir.actions.act_window">
+            <field name="name">Preços</field>
+            <field name="res_model">trip_price.regist</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+        <menuitem id="trip__priceregist_menu"
+                  name="Preço"
+                  parent="main_transport_menu"
+                  action="action_trip_price_regist"
+                  sequence="5"/>
+
+
+    </data>
+</odoo>

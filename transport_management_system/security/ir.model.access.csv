@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_fleet_regist,fleet.regist,model_fleet_regist,base.group_user,1,1,1,1
+access_driver_regist,driver.regist,model_driver_regist,base.group_user,1,1,1,1
+access_route_regist,route.regist,model_route_regist,base.group_user,1,1,1,1
+access_trip_regist,trip.regist,model_trip_regist,base.group_user,1,1,1,1
+access_trip_price_regist,trip_price.regist,model_trip_price_regist,base.group_user,1,1,1,1
+

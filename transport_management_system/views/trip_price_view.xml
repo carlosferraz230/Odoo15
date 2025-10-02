@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Alterando a View Form do Modulo Fleet Vehicle -->
+    <record id="trip_price_regist_views_form" model="ir.ui.view">
+        <field name="name">trip_price.regist.form</field>
+        <field name="model">trip_price.regist</field>
+        <field name="arch" type="xml">
+            <form string="Preço">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="gasoline"/>
+                            <field name="peda"/>
+                        </group>
+                        <group>
+                            <field name="repair"/>
+                            <field name="price"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Modelo, Registo de uma vista tree-->
+    <record id="trip_price_regist_views_tree" model="ir.ui.view">
+        <field name="name">trip_price.regist.tree</field>
+        <field name="model">trip_price.regist</field>
+        <field name="arch" type="xml">
+            <tree string="Preço">
+                <field name="gasoline"/>
+                <field name="peda"/>
+                <field name="repair"/>
+                <field name="price"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Modelo , Registo de Uma Vista Kanban -->
+    <record id="trip_price_regist_view_kanban" model="ir.ui.view">
+        <field name="name">trip_price.regist.kanban</field>
+        <field name="model">trip_price.regist</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_small_column" create="true">
+                <field name="price"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record">
+                            <div class="o_kanban_record_top">
+                                <strong>
+                                    <field name="price"/>
+                                </strong>
+                            </div>
+                            <div class="o_kanban_record_body">
+                                <p>
+                                    <b>Combustível :</b>
+                                    <field name="gasoline"/>
+                                </p>
+                                <p>
+                                    <b>Pedágios :</b>
+                                    <field name="peda"/>
+                                </p>
+                                <p>
+                                    <b>Manutenção :</b>
+                                    <field name="repair"/>
+                                </p>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+</odoo>
