@@ -1,8 +1,8 @@
 # Usa a imagem oficial do Odoo 15
 FROM odoo:15.0
 
-# Copiar os módulos customizados do seu repositório
-COPY ./Odoo15 /mnt/extra-addons
+# Copiar todos os módulos customizados para dentro do container
+COPY . /mnt/extra-addons
 
 # Expor a porta padrão do Odoo
 EXPOSE 8069
