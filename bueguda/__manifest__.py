@@ -8,7 +8,7 @@
     'category': 'Serviço/Vendas',
     'data': [
         'security/sales_security.xml',
-        'security/ir.model.access.csv',
+        'security/ir.model.access.csv.csv',
         'views/client_view.xml',
         'data/client_sequence.xml',
         'views/edit_sale_page.xml',
