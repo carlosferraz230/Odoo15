@@ -16,4 +16,4 @@ Inclui módulos personalizados, ajustes em regras de negócio e exemplos de rela
 ## ⚙️ Instalação e Execução
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/SEU_USUARIO/Odoo15.git
+   git clone https://github.com/carlosferraz230/Odoo15.git
